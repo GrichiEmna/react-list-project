@@ -29,10 +29,16 @@ function App() {
       <input id="search" type="text" />
       <hr />
       <ul>
-        {list.map(function (item) {
-          return <li>{item.title}</li>;
-        })}
-      </ul>
+  {list.map(function (item) {
+    return (
+      <li key={item.objectID}>
+        <span>{item.title}</span>
+        <span> by {item.author}</span>
+        <span> (Comments: {item.num_comments})</span>
+      </li>
+    );
+  })}
+</ul>
     </div>
   );
 }
